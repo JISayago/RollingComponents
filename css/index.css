@@ -2,3 +2,26 @@
     margin: 0;
     padding: 0;
 }
+
+.contenedor-principal{
+    width: 100%;
+    height: 100vh;
+    max-height: fit-content;
+}
+
+.carousel-local{
+   
+        width: 100%;
+        height: 415px;
+}
+
+/* Estilo para ajustar las imágenes del carrusel */
+.contenedor-items-local {
+    width: 100%;
+    height: 415px; 
+  }
+  .carousel-item-local img {
+    width: 100%; /* Imágenes abarcan todo el ancho */
+    height: 100%; /* Imágenes abarcan toda la altura del contenedor del carrusel */
+    object-fit:contain; /* Ajusta la imagen para cubrir el contenedor manteniendo la proporción */
+  }
