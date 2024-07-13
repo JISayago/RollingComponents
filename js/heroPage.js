@@ -13,11 +13,11 @@ const redirect_guest = () => {
 }
 
 const redirect_login = () => {
-    window.location.href = "../Paginas/login.html"
+    window.location.href = "../pages/login.html"
     sessionStorage.setItem('vioHeroPage', 'true');
 }
 const redirect_register = () => {
-    window.location.href = "../Paginas/register.html"
+    window.location.href = "../pages/register.html"
     sessionStorage.setItem('vioHeroPage', 'true');
 }
 
