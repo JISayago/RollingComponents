@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Sayago Juan Ignacio" />
+    <meta name="description" content="Pagina de ventas de componentes de computación" />
+    <meta name="keywords" content="venta, pc,gaming,componentes,amd,intel,computación" />
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/productos.css">
+    <title>Rolling Components</title>
+</head>
+<body>
+    <!-- Comienzo sección Navbar-->
+    <div>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img  src="./assets/logo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown link
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand">Navbar</a>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+    <!-- Fin sección Navbar-->
+    
+    <!--Comienzo cuerpo de index-->
+    <div class="contenedor-principal">
+        <!--Comienzo Carousel-->
+        <div id="carouselExampleIndicators" class="carousel slide carousel-local">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner contenedor-items-local">
+                <div class="carousel-item carousel-item-local active">
+                    <img src="https://picsum.photos/800/400?random=1" alt="Slide 1">
+                </div>
+                <div class="carousel-item carousel-item-local">
+                    <img src="https://picsum.photos/800/400?random=2" alt="Slide 2">
+                </div>
+                <div class="carousel-item carousel-item-local">
+                    <img src="https://picsum.photos/800/400?random=3" alt="Slide 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!--Fin Carousel-->
+        
+        <!--Cuerpo Productos-->
+        <div class="row contenedor-productos" id="row-productos-index">
+            <!--Productos-->
+            <div class="card m-3 card-local contenedor-producto-local" style="width: 18rem;">
+                <img src='https://picsum.photos/800/400?random=20' class="card-img-top img-card-producto" alt="imagenProducto">
+                <div class="card-body">
+                    <h5 class="card-text text-truncate w-100 titulo-producto">${p.nombre}</h5>
+                    <p class="card-text text-truncate-local">${p.detalle}.</p>
+                    <h6 class="card-title w-100 text-center fw-bold fs-5 text p-2 mb-3 border-bottom-local align-h6 precio-producto">$ ${p.precio}</h6>
+                    <div class="d-flex w-100 justify-content-evenly">
+                        <a class="btn btn-Comprar" id="AgregarAlCarrito">Comprar</a>
+                        <a href="" class="btn btn-Detalle">Detalles</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card m-3 card-local contenedor-producto-local" style="width: 18rem;">
+                <img src='https://picsum.photos/800/400?random=20' class="card-img-top img-card-producto" alt="imagenProducto">
+                <div class="card-body">
+                    <h5 class="card-text text-truncate w-100 titulo-producto">${p.nombre}</h5>
+                    <p class="card-text text-truncate-local">${p.detalle}.</p>
+                    <h6 class="card-title w-100 text-center fw-bold fs-5 text p-2 mb-3 border-bottom-local align-h6 precio-producto">$ ${p.precio}</h6>
+                    <div class="d-flex w-100 justify-content-evenly">
+                        <a class="btn btn-Comprar" id="AgregarAlCarrito">Comprar</a>
+                        <a href="" class="btn btn-Detalle">Detalles</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card m-3 card-local contenedor-producto-local" style="width: 18rem;">
+                <img src='https://picsum.photos/800/400?random=20' class="card-img-top img-card-producto" alt="imagenProducto">
+                <div class="card-body">
+                    <h5 class="card-text text-truncate w-100 titulo-producto">${p.nombre}</h5>
+                    <p class="card-text text-truncate-local">${p.detalle}.</p>
+                    <h6 class="card-title w-100 text-center fw-bold fs-5 text p-2 mb-3 border-bottom-local align-h6 precio-producto">$ ${p.precio}</h6>
+                    <div class="d-flex w-100 justify-content-evenly">
+                        <a class="btn btn-Comprar" id="AgregarAlCarrito">Comprar</a>
+                        <a href="" class="btn btn-Detalle">Detalles</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card m-3 card-local contenedor-producto-local" style="width: 18rem;">
+                <img src='https://picsum.photos/800/400?random=20' class="card-img-top img-card-producto" alt="imagenProducto">
+                <div class="card-body">
+                    <h5 class="card-text text-truncate w-100 titulo-producto">${p.nombre}</h5>
+                    <p class="card-text text-truncate-local">${p.detalle}.</p>
+                    <h6 class="card-title w-100 text-center fw-bold fs-5 text p-2 mb-3 border-bottom-local align-h6 precio-producto">$ ${p.precio}</h6>
+                    <div class="d-flex w-100 justify-content-evenly">
+                        <a class="btn btn-Comprar" id="AgregarAlCarrito">Comprar</a>
+                        <a href="" class="btn btn-Detalle">Detalles</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card m-3 card-local contenedor-producto-local" style="width: 18rem;">
+                <img src='https://picsum.photos/800/400?random=20' class="card-img-top img-card-producto" alt="imagenProducto">
+                <div class="card-body">
+                    <h5 class="card-text text-truncate w-100 titulo-producto">${p.nombre}</h5>
+                    <p class="card-text text-truncate-local">${p.detalle}.</p>
+                    <h6 class="card-title w-100 text-center fw-bold fs-5 text p-2 mb-3 border-bottom-local align-h6 precio-producto">$ ${p.precio}</h6>
+                    <div class="d-flex w-100 justify-content-evenly">
+                        <a class="btn btn-Comprar" id="AgregarAlCarrito">Comprar</a>
+                        <a href="" class="btn btn-Detalle">Detalles</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card m-3 card-local contenedor-producto-local" style="width: 18rem;">
+                <img src='https://picsum.photos/800/400?random=20' class="card-img-top img-card-producto" alt="imagenProducto">
+                <div class="card-body">
+                    <h5 class="card-text text-truncate w-100 titulo-producto">${p.nombre}</h5>
+                    <p class="card-text text-truncate-local">${p.detalle}.</p>
+                    <h6 class="card-title w-100 text-center fw-bold fs-5 text p-2 mb-3 border-bottom-local align-h6 precio-producto">$ ${p.precio}</h6>
+                    <div class="d-flex w-100 justify-content-evenly">
+                        <a class="btn btn-Comprar" id="AgregarAlCarrito">Comprar</a>
+                        <a href="" class="btn btn-Detalle">Detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fin Productos -->
+        
+        <!--Comienzo Footer-->
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Menú -->
+                    <div class="col-md-4 footer-principio">
+                        <ul>
+                            <li><a href="#">Inicio</a></li>
+                            <li><a href="#">Contacto</a></li>
+                            <li><a href="#">Sobre Nosotros</a></li>
+                        </ul>
+                    </div>
+                    <!-- Información de Contacto -->
+                    <div class="col-md-4 footer-medio">
+                        <ul>
+                            <li>Dirección: Santiago 485</li>
+                            <li>Teléfono: 4625566</li>
+                        </ul>
+                    </div>
+                    <!-- Redes Sociales -->
+                    <div class="col-md-4 footer-fin">
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">WhatsApp</a></li>
+                            <li><a href="#">Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Fin Footer-->
+        <script src="./js/index.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+    </html>
+    
