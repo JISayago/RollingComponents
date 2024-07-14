@@ -35,14 +35,16 @@
         <form>
             <div class="mb-3">
                 <label for="username" class="form-label">Usuario</label>
-                <input type="text" class="form-control" id="username" placeholder="Ingrese su usuario">
+                <input type="text" class="form-control" id="usuarioInput" placeholder="Ingrese su usuario">
+                <small id="usuarioError" class="form-text"></small>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
+                <input type="password" class="form-control" id="contraseniaInput" placeholder="Ingrese su contraseña">
+                <small id="contraseniaError" class="form-text"></small>
             </div>
             <div class="mb-3 text-center">
-                <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+                <button id="inicioSesionBtn" type="button" class="btn btn-primary w-100">Iniciar Sesión</button>
             </div>
             <div class="text-center">
                 <a href="#" class="d-block mb-2">¿Olvidaste la contraseña?</a>
@@ -50,7 +52,7 @@
             </div>
         </form>
     </div>
-
+    <script src="../js/login.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
