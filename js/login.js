@@ -44,9 +44,9 @@ const ingresoAlSistema = () => {
             if (usuarioEncontrado.password === inputContrasenia) {
                 alert('Ingreso exitoso!');
                 // Redireccionar o cualquier otra acción que desees
-                let usuarioSession = JSON.parse(sessionStorage.getItem('usuarioLogeado'));
-
-                window.location.href = 'index.html'; // Ejemplo de redireccionamiento
+                    sessionStorage.removeItem('usuarioLogeado') 
+                    sessionStorage.setItem('usuarioLogeado', JSON.stringify(usuarioEncontrado)) 
+                    window.location.href = '../index.html'; // Ejemplo de redireccionamiento
             } else {
                 intentosFallidos++;
                 contraseniaErrorElement.innerText = "Contraseña incorrecta.";

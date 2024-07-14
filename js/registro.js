@@ -23,20 +23,20 @@ const registroEnSistema = () => {
     
     // Validaciones para nombre
     if (nombre === "") {
-        setError('firstName', 'El nombre no puede estar vacío.');
+        setError('nombre', 'El nombre no puede estar vacío.');
         isValid = false;
     }
     
     // Validaciones para apellido
     if (apellido === "") {
-        setError('lastName', 'El apellido no puede estar vacío.');
+        setError('apellido', 'El apellido no puede estar vacío.');
         isValid = false;
     }
     
     // Validaciones para usuario
     const usuarioError = validarUsuario(usuario);
     if (usuarioError !== "") {
-        setError('username', usuarioError);
+        setError('usuario', usuarioError);
         isValid = false;
     }
     
@@ -50,19 +50,19 @@ const registroEnSistema = () => {
     // Validaciones para contraseña
     const contraseniaError = validarContrasenia(contrasenia);
     if (contraseniaError !== "") {
-        setError('password', contraseniaError);
+        setError('contrasenia', contraseniaError);
         isValid = false;
     }
     
     // Validaciones para confirmar contraseña
     if (contrasenia !== confirmarContrasenia) {
-        setError('confirmPassword', 'Las contraseñas no coinciden.');
+        setError('confirmarContrasenia', 'Las contraseñas no coinciden.');
         isValid = false;
     }
     
     // Validación de términos y condiciones
     if (!termsAccepted) {
-        setError('terms', 'Debes aceptar los términos y condiciones.');
+        setError('terminos', 'Debes aceptar los términos y condiciones.');
         isValid = false;
     }
     
@@ -70,7 +70,7 @@ const registroEnSistema = () => {
     if (isValid) {
         let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
         if (usuarios.find(user => user.username === usuario)) {
-            setError('username', 'El nombre de usuario ya está en uso.');
+            setError('usuario', 'El nombre de usuario ya está en uso.');
         } else {
             let nuevoUsuario = {
                 nombre: nombre,
