@@ -14,7 +14,7 @@ const registroEnSistema = () => {
     email = document.getElementById('email').value.trim();
     contrasenia = document.getElementById('password').value.trim();
     confirmarContrasenia = document.getElementById('confirmPassword').value.trim();
-    termsAccepted = document.getElementById('terms').checked;
+    termsAccepted = document.getElementById('terminos').checked;
     
     let isValid = true;
     
@@ -23,20 +23,20 @@ const registroEnSistema = () => {
     
     // Validaciones para nombre
     if (nombre === "") {
-        setError('nombre', 'El nombre no puede estar vacío.');
+        setError('firstName', 'El nombre no puede estar vacío.');
         isValid = false;
     }
     
     // Validaciones para apellido
     if (apellido === "") {
-        setError('apellido', 'El apellido no puede estar vacío.');
+        setError('lastName', 'El apellido no puede estar vacío.');
         isValid = false;
     }
     
     // Validaciones para usuario
     const usuarioError = validarUsuario(usuario);
     if (usuarioError !== "") {
-        setError('usuario', usuarioError);
+        setError('username', usuarioError);
         isValid = false;
     }
     
@@ -50,13 +50,13 @@ const registroEnSistema = () => {
     // Validaciones para contraseña
     const contraseniaError = validarContrasenia(contrasenia);
     if (contraseniaError !== "") {
-        setError('contrasenia', contraseniaError);
+        setError('password', contraseniaError);
         isValid = false;
     }
     
     // Validaciones para confirmar contraseña
     if (contrasenia !== confirmarContrasenia) {
-        setError('confirmarContrasenia', 'Las contraseñas no coinciden.');
+        setError('confirmPassword', 'Las contraseñas no coinciden.');
         isValid = false;
     }
     
@@ -70,7 +70,7 @@ const registroEnSistema = () => {
     if (isValid) {
         let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
         if (usuarios.find(user => user.username === usuario)) {
-            setError('usuario', 'El nombre de usuario ya está en uso.');
+            setError('username', 'El nombre de usuario ya está en uso.');
         } else {
             let nuevoUsuario = {
                 nombre: nombre,
