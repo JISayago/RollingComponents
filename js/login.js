@@ -2,6 +2,19 @@ let inputContrasenia = "";
 let inputUsuario = "";
 
 let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+if (!usuarios.length) {
+    let nuevoUsuario = {
+        nombre: "Administrador",
+        apellido: "SuperAdmin",
+        username: "Sadmin",
+        email: "superadmin@gmail.com",
+        password: "sadmin",
+        tipoUsuario: 0,
+        esteBloqueado: false
+    };
+    usuarios.push(nuevoUsuario);
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+}
 let intentosFallidos = 0;
 
 const ingresoAlSistema = () => {

@@ -77,7 +77,9 @@ const registroEnSistema = () => {
                 apellido: apellido,
                 username: usuario,
                 email: email,
-                password: contrasenia
+                password: contrasenia,
+                tipoUsuario: 2,
+                esteBloqueado: false
             };
             usuarios.push(nuevoUsuario);
             localStorage.setItem('usuarios', JSON.stringify(usuarios));
