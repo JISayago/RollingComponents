@@ -17,66 +17,62 @@
     
   </head>
   <body>
-    <!-- Comienzo sección Navbar-->
-    <div class=" mb-1">
-      <!-- First Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-        <div class="container-fluid p-2">
-          <a class="navbar-brand p-3" href="../index.html"><img src="../assets/logobSinFondo.png" alt="Imagen del Logo"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="./contacto.html">Contacto</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./productos.html">Favoritos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link"  href="./sobreNosotros.html">Sobre Nosotros</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Categorias
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <div class="d-flex align-items-center">
-            <a class="nav-link me-3" href="./login.html">Login</a>
-            <a class="nav-link me-3" href="./registro.html">Registro</a>
-            <div class="">
-              <a class="nav-link" href="#"><img  src="../assets/siluetaguestsinfondo.png" alt="User Logo" style="width: 40px; height: 40px;"></a>
-            </div>
+     <!-- Comienzo sección Navbar-->
+  <div class=" mb-1">
+    <!-- First Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+      <div class="container-fluid p-2">
+        <a class="navbar-brand p-3" href="../index.html"><img src="../assets/logobSinFondo.png" alt="Imagen del Logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="./productos.html">Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./productos.html">Favoritos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="./sobreNosotros.html">Sobre Nosotros</a>
+            </li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center">
+          <a class="nav-link me-3" href="./login.html">Login</a>
+          <a class="nav-link me-3" href="./registro.html">Registro</a>
+          <div class="">
+            <a class="nav-link" href="#"><img  src="../assets/siluetaguestsinfondo.png" alt="User Logo" style="width: 40px; height: 40px;"></a>
+            <label class="text-white" for="">User</label>
           </div>
         </div>
-      </nav>
-      
-      <!-- Second Navbar -->
-      <nav class="navbar navbar-dark bg-black pb-4 px-3">
-        <div class="container-fluid justify-content-between">
-          <div class="navbar-nav"></div>
-          <form class="d-flex mx-auto" role="search" style="width: 100%; max-width: 600px;">
-            <input class="form-control me-2" type="search" placeholder="Ej: Ryzen 5 1400" aria-label="Search">
-            <button class="btn btn-buscar" type="submit">Buscar</button>
-          </form>
-          <div class="cart-container position-relative">
-            <a class="nav-link" href="#"><img src="../assets/carritosinfondo.png" alt="Cart Icon" style="width: 35px; height: 35px;"></a>
-            <div class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-              0
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
     
+    <!-- Second Navbar -->
+    <nav class="navbar navbar-dark bg-black pb-4 px-3">
+      <div class="container-fluid justify-content-between">
+        <div class="navbar-nav"></div>
+        <form class="d-flex mx-auto" role="search" style="width: 100%; max-width: 600px;">
+          <input class="form-control me-2" type="search" placeholder="Ej: Ryzen 5 1400" aria-label="Search">
+          <button class="btn btn-buscar" type="submit">Buscar</button>
+        </form>
+        <div class="cart-container position-relative">
+          <a class="nav-link" href="#"><img src="../assets/carritosinfondo.png" alt="Cart Icon" style="width: 35px; height: 35px;"></a>
+          <div class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            0
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  
+  
+  <!-- Fin sección Navbar-->
     
   <!--Comienzo Footer-->
   <div class="footer">
@@ -86,6 +82,7 @@
         <div class="col-md-4 footer-principio">
           <ul class="d-flex">
             <li><a class="mx-2" href="../index.html">Inicio</a></li>
+            <li><a class="mx-2" href="./productos.html">Productos</a></li>
             <li><a class="mx-2" href="./contacto.html">Contacto</a></li>
             <li><a class="mx-2" href="./sobreNosotros.html">Sobre Nosotros</a></li>
           </ul>
