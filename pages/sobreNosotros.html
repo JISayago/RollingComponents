@@ -3,80 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
     <meta name="author" content="Sayago Juan Ignacio" />
-    <meta name="description" content="Pagina de ventas de componentes de computación" />
-    <meta name="keywords" content="venta, pc,gaming,componentes,amd,intel,computación" />
+    <meta name="description" content="Página de ventas de componentes de computación" />
+    <meta name="keywords" content="venta, pc, gaming, componentes, amd, intel, computación" />
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/base.css">
-  <link rel="stylesheet" href="../css/index.css">
-  <link rel="stylesheet" href="../css/navbar.css">
-  <title>Rolling Components</title>
-  
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>Rolling Components</title>
 </head>
 <body>
-  <!-- Comienzo sección Navbar-->
-  <div class=" mb-1">
-    <!-- First Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-      <div class="container-fluid p-2">
-        <a class="navbar-brand p-3" href="../index.html"><img src="../assets/logobSinFondo.png" alt="Imagen del Logo"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="./productos.html">Productos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./productos.html">Favoritos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./contacto.html">Contacto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link"  href="./sobreNosotros.html">Sobre Nosotros</a>
-            </li>
-          </ul>
-        </div>
-        <div class="d-flex align-items-center">
-          <a class="nav-link me-3" href="./login.html">Login</a>
-          <a class="nav-link me-3" href="./registro.html">Registro</a>
-          <div class="">
-            <a class="nav-link" href="#"><img  src="../assets/siluetaguestsinfondo.png" alt="User Logo" style="width: 40px; height: 40px;"></a>
-            <label class="text-white" for="">User</label>
-          </div>
-        </div>
+    <!-- Comienzo sección Navbar-->
+    <div class="mb-1">
+        <!-- First Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+            <div class="container-fluid p-2">
+                <a class="navbar-brand p-3" href="../index.html"><img src="../assets/logobSinFondo.png" alt="Imagen del Logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./productos.html">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./productos.html">Favoritos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./sobreNosotros.html">Sobre Nosotros</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-flex align-items-center">
+                    <a class="nav-link me-3" href="./login.html">Login</a>
+                    <a class="nav-link me-3" href="./registro.html">Registro</a>
+                    <div class="">
+                        <a class="nav-link" href="#"><img src="../assets/siluetaguestsinfondo.png" alt="User Logo" style="width: 40px; height: 40px;"></a>
+                        <label class="text-white" for="">User</label>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Second Navbar -->
+        <nav class="navbar navbar-dark bg-black pb-4 px-3">
+            <div class="container-fluid justify-content-between">
+                <div class="navbar-nav"></div>
+                <form class="d-flex mx-auto" role="search" style="width: 100%; max-width: 600px;">
+                    <input class="form-control me-2" type="search" placeholder="Ej: Ryzen 5 1400" aria-label="Search">
+                    <button class="btn btn-buscar" type="submit">Buscar</button>
+                </form>
+                <div class="cart-container position-relative">
+                    <a class="nav-link" href="#"><img src="../assets/carritosinfondo.png" alt="Cart Icon" style="width: 35px; height: 35px;"></a>
+                    <div class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        0
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Fin sección Navbar-->
+
+    <!-- Comienzo sección Sobre Nosotros-->
+    <div class="container my-5">
+      <h1 class="text-center mb-4">Sobre Nosotros</h1>
+      <p class="text-center lead">Bienvenido a Rolling Components, tu tienda ecommerce especializada en productos de gaming y computación. Nos dedicamos a ofrecer una amplia gama de componentes y accesorios de alta calidad para entusiastas de la tecnología, desde procesadores y tarjetas gráficas hasta periféricos y accesorios de gaming. Nuestro objetivo es proporcionar a nuestros clientes los mejores productos del mercado a precios competitivos, con un enfoque en la satisfacción del cliente y un servicio de atención excepcional.</p>
+      <p class="text-center lead">Rolling Components fue creado como parte del programa de Rolling Code y, debido a circunstancias externas, fue desarrollado individualmente. Por cuestiones de tiempo, me apoyé en el ChatGPT para armar la estructura de algunas paginas HTML y el uso de clases de Bootstrap para mejorar el diseño y funcionalidad de la página.</p>
+      <div class="text-center my-4">
+          <img src="../assets/perfil.png" alt="Juan Ignacio Sayago" class="img-fluid rounded-circle" style="width: 250px; height: 250px; object-fit:cover;">
+          <h4 class="mt-3">Juan Ignacio Sayago</h4>
       </div>
-    </nav>
-    
-    <!-- Second Navbar -->
-    <nav class="navbar navbar-dark bg-black pb-4 px-3">
-      <div class="container-fluid justify-content-between">
-        <div class="navbar-nav"></div>
-        <form class="d-flex mx-auto" role="search" style="width: 100%; max-width: 600px;">
-          <input class="form-control me-2" type="search" placeholder="Ej: Ryzen 5 1400" aria-label="Search">
-          <button class="btn btn-buscar" type="submit">Buscar</button>
-        </form>
-        <div class="cart-container position-relative">
-          <a class="nav-link" href="#"><img src="../assets/carritosinfondo.png" alt="Cart Icon" style="width: 35px; height: 35px;"></a>
-          <div class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            0
-          </div>
-        </div>
-      </div>
-    </nav>
   </div>
   
   
-  <!-- Fin sección Navbar-->
+    <!-- Fin sección Sobre Nosotros-->
 
-<h1>Pagina sobre Nosotros</h1>
-
-  
-  <!--Comienzo Footer-->
+    <!--Comienzo Footer-->
   <div class="footer">
     <div class="container-fluid">
       <div class="row">
@@ -110,8 +117,9 @@
     </div>
   </div>
   <!--Fin Footer-->
-  <script src="https://kit.fontawesome.com/416cfb6a1a.js" crossorigin="anonymous"></script>
-  <script src="./js/index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/416cfb6a1a.js" crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
