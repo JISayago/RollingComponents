@@ -30,7 +30,7 @@ if (!productos.length) {
                 <h6 class="card-title w-100 text-center fw-bold fs-5 text p-2 mb-3 border-bottom-local align-h6 precio-producto">$ ${p.precio}</h6>
                 <div class="d-flex w-100 justify-content-evenly">
                   <a class="btn btn-Comprar" id="AgregarAlCarrito">Comprar</a>
-                  <a href="" class="btn btn-Detalle">Detalles</a>
+                  <a href="../pages/detalleProducto.html?=${p.id}" class="btn btn-Detalle">Detalles</a>
                 </div>
               </div>
             </div>
