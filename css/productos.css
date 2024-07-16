@@ -21,7 +21,7 @@
   }
   
   .border-bottom-local{
-    border-bottom:1px solid #000000;
+    border-bottom:1px solid var(--negro);
   }
   
   .align-h6{
@@ -29,37 +29,37 @@
   }
   
   .card-local{
-    border: 1px solid #000000;
-    background: #eaeaea;
+    border: 1px solid var(--negro);
+    background: var(--gris);
   }
   
   .precio-producto{
-  color: #d88913;
+  color: var(--color-1);
   }
   .btn-Comprar{
-    background-color: #000000;
-    color: #118607;
+    background-color: var(--negro);
+    color: var(--blanco);
   }
   .btn-Comprar:hover{
-    border:1px solid #000000;
-    background-color: #118607;
-    color: #000000;
+    border:1px solid var(--negro);
+    background-color: var(--color-1);
+    color: var(--negro);
   }
   .btn-Detalle{
-    background-color: #000000;
-    color: #d88913;
+    background-color: var(--negro);
+    color: var(--color-1);
   }
   .btn-Detalle:hover{
-    border:1px solid #000000;
-    background-color: #d88913;
-    color: #000000;
+    border:1px solid var(--negro);
+    background-color: var(--color-1);
+    color: var(--negro);
   }
   .btn-Categoria-Active {
-    color: #000000;
-    background-color: #d88913;
+    color: var(--negro);
+    background-color: var(--color-1);
   }
   .columna-categoria-local .btn-Categoria-Active {
-    background: #d88913;
-    border:1px solid #000000;
-    color: #ffffff;
+    background: var(--color-1);
+    border:1px solid var(--negro);
+    color: var(--blanco);
   }
