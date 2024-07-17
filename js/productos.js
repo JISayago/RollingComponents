@@ -20,6 +20,9 @@ const contenedor_productos = document.getElementById('contenedor-productos');
 if (!productos.length) {
     productos = productos_json;
 } 
+
+const titulo = document.getElementById('titulo-productos');
+    titulo.innerHTML = `Productos filtrado por: ${parametro ? parametro : 'Todos'}`
     contenedor_productos.innerHTML = productos.map(p =>
         `
            <div class="card m-3 card-local contenedor-producto-local" style="width: 18rem;">
