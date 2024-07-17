@@ -7,6 +7,36 @@ const producto = productos_json.find(p => p.id === parseInt(parametro));
 
 const contenedor_detalle_producto = document.getElementById('contenedor-detalle-producto');
 
+
+const agregarProductoAFavoritos = () => {
+    const userLogeado = JSON.parse(sessionStorage.getItem('usuarioLogeado'));
+    if (userLogeado === "guest" || !userLogeado) {
+        alert('Debe ingresar con su usuario para utilizar este servicio.')
+        window.location.href = "../index.html"
+    } 
+
+    let favoritosLS = JSON.parse(sessionStorage.getItem('productosFavoritos')) || [];
+    
+    let productoFavorito = {
+        "id": producto.id,
+        "nombre":producto.nombre
+    }
+    if (!favoritosLS.length) {
+        favoritosLS.push(productoFavorito);
+    } else {
+        let existe = favoritosLS.some(pf => pf.id === productoFavorito.id);
+        if (!existe) {
+            favoritosLS.push(productoFavorito);
+        } else {
+            alert('El producto ya se encuentra en favoritos')
+            window.location.href = "../pages/productos.html?=Favoritos"
+        }
+    }
+    sessionStorage.setItem('productosFavoritos', JSON.stringify(favoritosLS));
+
+
+}
+
 contenedor_detalle_producto.innerHTML = 
 `
          <!-- Imagen del producto -->
@@ -23,7 +53,9 @@ contenedor_detalle_producto.innerHTML =
                 <p><strong>Marca:</strong> ${producto.marca}</p>
                 <div class="mt-4">
                     <button class="btn btn-primary me-3">Agregar al Carrito</button>
-                    <button class="btn btn-outline-primary">Agregar a Favoritos</button>
+                    <button class="btn btn-outline-primary" id="btn-AgregarFavorito">Agregar a Favoritos</button>
                 </div>
             </div>
 `
+const btnAgregarFavorito = document.getElementById('btn-AgregarFavorito');
+btnAgregarFavorito.addEventListener('click', agregarProductoAFavoritos)
