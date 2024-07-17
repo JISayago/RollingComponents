@@ -14,7 +14,18 @@
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/detalleProducto.css">
     <title>Rolling Components</title>
-    
+    <style>
+      /* Estilos adicionales específicos */
+      .producto-imagen {
+          width: 100%;
+          height: auto;
+          max-height: 400px; /* Limitar la altura para evitar desbordamientos */
+          object-fit: cover; /* Ajustar la imagen para llenar el contenedor */
+      }
+      .producto-detalle {
+          padding: 20px;
+      }
+  </style>
   </head>
   <body>
      <!-- Comienzo sección Navbar-->
@@ -70,7 +81,27 @@
       </div>
     </nav>
   </div>
-  
+  <div class="container my-5">
+    <div class="row gx-5 align-items-center" id="contenedor-detalle-producto" style="height: 55vh;">
+      <!-- Imagen del producto -->
+      <div class="col-lg-6">
+        <img src="${producto.imagenPrincipal}" alt="Nombre del Producto" class="img-fluid producto-imagen">
+    </div>
+    <!-- Detalles del producto -->
+    <div class="col-lg-6 producto-detalle">
+        <h2 class="mb-4">${producto.nombre}</h2>
+        <p class="lead mb-4">${producto.detalle}</p>
+        <p><strong>Precio:</strong> $ ${producto.precio}</p>
+        <p><strong>Precio Oferta:</strong> <span class="text-success">$ ${producto.precioEnOferta ? producto.precioEnOferta : "sin oferta" }</span></p>
+        <p><strong>Disponibilidad:</strong> ${producto.cantidad}</p>
+        <p><strong>Marca:</strong> ${producto.marca}</p>
+        <div class="mt-4">
+            <button class="btn btn-primary me-3">Agregar al Carrito</button>
+            <button class="btn btn-outline-primary">Agregar a Favoritos</button>
+        </div>
+    </div>
+    </div>
+</div>
   
   <!-- Fin sección Navbar-->
     
