@@ -10,7 +10,7 @@ if (!usuarios.length) {
         email: "superadmin@gmail.com",
         password: "sadmin",
         tipoUsuario: 0,
-        esteBloqueado: false
+        estaBloqueado: false
     };
     usuarios.push(nuevoUsuario);
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
