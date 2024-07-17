@@ -15,7 +15,7 @@ const agregarProductoAFavoritos = () => {
         window.location.href = "../index.html"
     } 
 
-    let favoritosLS = JSON.parse(sessionStorage.getItem('productosFavoritos')) || [];
+    let favoritosLS = JSON.parse(localStorage.getItem(`productosFavoritos:${userLogeado.username}`)) || [];
     
     let productoFavorito = {
         "id": producto.id,
@@ -32,7 +32,7 @@ const agregarProductoAFavoritos = () => {
             window.location.href = "../pages/productos.html?=Favoritos"
         }
     }
-    sessionStorage.setItem('productosFavoritos', JSON.stringify(favoritosLS));
+    localStorage.setItem(`productosFavoritos:${userLogeado.username}`, JSON.stringify(favoritosLS));
 
 
 }

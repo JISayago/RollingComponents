@@ -1,6 +1,7 @@
 let productos_json = JSON.parse(localStorage.getItem('productos')) || [];
 let productos = [];
 
+
 const url = new URLSearchParams(window.location.search);
 const parametro = url.get('');
 
@@ -20,7 +21,21 @@ switch (parametro) {
         productos = productos_json.filter(p => p.enOferta);
         break;
     case "Favoritos":
-        console.log("favoritos");
+        let userLogeado = JSON.parse(sessionStorage.getItem('usuarioLogeado')) || "guest";
+        if (userLogeado === "guest") {
+             alert('El producto ya se encuentra en favoritos')
+            window.location.href = "../pages/productos.html?=Favoritos"
+        } else {
+            let productosFavoritosLS = JSON.parse(localStorage.getItem(`productosFavoritos:${userLogeado.username}`)) || [];
+            productos = productos_json.filter(producto => 
+                productosFavoritosLS.some(favorito => favorito.id === producto.id)
+            );
+            if (!productos.length) {
+                alert("Actualmente no cuentas con productos agregados a favoritos, comienza ahora!")
+                window.location.href = "../pages/productos.html";
+            }
+        }
+       
         break;
     default:
         productos = productos_json.filter(p => p.categorias.some(cat => cat.toLowerCase() === parametro.toLowerCase()));
