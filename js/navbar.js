@@ -68,7 +68,6 @@ if (pagina.includes('index.html')) {
   </nav>
   `;
 } else {
-  console.log(user)
   contenedor_nav.innerHTML = `
   <nav class="navbar navbar-expand-lg navbar-dark bg-black">
     <div class="container-fluid p-2">
