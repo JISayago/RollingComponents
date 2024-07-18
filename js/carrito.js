@@ -35,11 +35,11 @@ productos_carrito.innerHTML = productos_carritoLS.map( pc =>
 `<div class="product-card">
 <img src="${pc.imagenPrincipal}" class="img-fluid" alt="Producto 1">
 <h5 class="mt-3">${pc.nombre}</h5>
-<p class="text-muted">${pc.precio}</p>
-<div class="input-group mb-3">
-  <input type="text" class="form-control text-center" placeholder="Cantidad" value="1" id="cantidad-producto1">
+<p class="">$ ${pc.precio}</p>
+<div class="input-group mb-3 justify-content-center">
+  <input type="text" class="form-control text-center input-cantidad" placeholder="Cantidad" value="1" id="cantidad-producto1">
 </div>
-<button class="btn btn-primary" onclick="eliminarDelCarrito(${pc.id})">Eliminar del Carrito</button>
+<button class="btn btn-danger" onclick="eliminarDelCarrito(${pc.id})">Eliminar del Carrito</button>
 </div>`)
 
 const carritoTotal = document.getElementById('carrito-total');

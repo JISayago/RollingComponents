@@ -11,34 +11,9 @@
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/productos.css">
     <link rel="stylesheet" href="../css/contacto.css">
     <title>Contacto - Rolling Components</title>
-    <style>
-      /* contacto.css */
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.btn-enviar {
-    background-color: #000000;
-    border: none;
-    color:#C2184B;
-    padding: 10px;
-    font-size: 18px;
-}
-
-.btn-enviar:hover {
-    background-color: #C2184B;
-}
-
-    </style>
+   
 </head>
 <body>
     <!-- Comienzo sección Navbar-->
@@ -47,7 +22,7 @@
     <!-- Fin sección Navbar-->
     
     <!-- Comienzo sección Contacto-->
-    <div class="container my-5">
+    <div class="container my-5 contenedor-contacto">
         <h1 class="text-center mb-4">Contacto</h1>
         <form id="contactForm">
           <div class="mb-3">
@@ -66,7 +41,7 @@
               <div id="mensajeError" class="invalid-feedback"></div>
           </div>
           <div class="d-grid">
-              <button type="submit" class="btn btn-primary btn-enviar">Enviar</button>
+              <button type="submit" class="btn btn-enviar">Enviar</button>
           </div>
       </form>
     </div>

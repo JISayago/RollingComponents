@@ -1,0 +1,17 @@
+.contenedor-form-abmproductos{
+    padding: 50px;
+    border-radius: 15px;
+    background-color: var(--negro);
+}
+
+.contenedor-form-abmproductos{
+    color: var(--blanco);
+}
+#btnAgregar{
+background: var(--color-1);
+color: var(--blanco);
+}
+#btnAgregar:hover,#btnEliminar:hover,#btnCancelar:hover{
+background: var(--blanco);
+color: var(--negro);
+}

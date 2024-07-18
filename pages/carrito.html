@@ -11,34 +11,9 @@
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/index.css">
   <link rel="stylesheet" href="../css/navbar.css">
-  <link rel="stylesheet" href="../css/productos.css">
+  <link rel="stylesheet" href="../css/carrito.css">
   <title>Rolling Components</title>
-  <style>
-    .product-card {
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      padding: 15px;
-      margin-bottom: 20px;
-      text-align: center; /* Centrar el contenido */
-    }
-    .cart-container {
-      position: relative;
-      text-align: center; /* Centrar el contenido */
-    }
-    .total {
-      background-color: #f8f9fa;
-      padding: 10px;
-      border: 1px solid #ddd;
-      margin-top: 20px;
-      text-align: center; /* Centrar el contenido */
-    }
-    .confirm-button {
-      margin-top: 20px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  </style>
+ 
 </head>
 <body>
   <!-- Comienzo sección Navbar-->
@@ -48,7 +23,7 @@
 
 
   <!-- Product List -->
-<div class="container mt-5" style="min-height: 50vh;">
+<div class="container mt-5r" style="min-height: 50vh;">
     <div class="row" id="productos-carrito">
       <!-- Example Product Card -->
       <!-- More Product Cards -->
@@ -60,9 +35,9 @@
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <div class="total">
-          <h5>Total en Carrito: <span id="carrito-total">0</span></h5>
+          <h5 class="total-t">Total en Carrito: <span id="carrito-total">0</span></h5>
         </div>
-        <button class="btn btn-success  confirm-button" id="btn-comprar">Confirmar Compra</button>
+        <button class="btn btn-comprarCarrito" id="btn-comprar">Confirmar Compra</button>
       </div>
     </div>
   </div>
