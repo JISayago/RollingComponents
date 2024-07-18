@@ -24,8 +24,8 @@ switch (parametro) {
     case "Favoritos":
     usuarioLogeado = JSON.parse(sessionStorage.getItem('usuarioLogeado')) || "guest";
     if (usuarioLogeado === "guest") {
-        alert('El producto ya se encuentra en favoritos')
-        window.location.href = "../pages/productos.html?=Favoritos"
+        alert('¡Necesita logearse para utilizar esta funcion de la página!')
+        window.location.href = "../pages/login.html"
     } else {
         let productosFavoritosLS = JSON.parse(localStorage.getItem(`productosFavoritos:${usuarioLogeado.username}`)) || [];
         productos = productos_json.filter(producto => 
