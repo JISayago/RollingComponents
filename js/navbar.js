@@ -127,8 +127,7 @@ if (pagina.includes('index.html')) {
   `;
 }
 
-// Aquí puedes actualizar el número del carrito
 const divContador = document.getElementById('cart-count');
-divContador.innerHTML = carrito.length || 0; // Actualiza este número según tu lógica
+divContador.innerHTML = carrito.length || 0; 
 
 

@@ -15,7 +15,6 @@ let contPEnOferta = document.getElementById('productoEnOferta');
 let contPDestacado = document.getElementById('productoDestacado');
 let contPCategorias = document.getElementById('productoCategorias');
 
-// Verificar si hay un único parámetro en la URL y productos existentes
 if (url.size === 1 && productos.length) {
     let producto = productos.find(p => p.id === parseInt(id));
     
@@ -51,7 +50,6 @@ function generarIDUnico() {
     return id;
 }
 
-// Función para limpiar los campos del formulario después de agregar o editar un producto
 function limpiarCampos() {
     contPId.value = '';
     contPNombre.value = '';
@@ -66,7 +64,6 @@ function limpiarCampos() {
     contPCategorias.value = '';
 }
 
-// Función para cargar un nuevo producto o actualizar uno existente
 function cargarNuevo(e) {
     e.preventDefault();
     
@@ -129,7 +126,6 @@ function eliminarLogica() {
         window.location.href = "../pages/productos.html"
     }
 }
-// Evento para escuchar el click en el botón de agregar/guardar producto
 const btnAgregar = document.getElementById('btnAgregar');
 btnAgregar.addEventListener('click', cargarNuevo);
 const btnEliminar = document.getElementById('btnEliminar');

@@ -29,7 +29,6 @@ function comprarCarrito() {
     window.location.href = '../index.html'
 }
 
-// Llamar a esta función al cargar la página para inicializar el carrito
 const productos_carrito = document.getElementById('productos-carrito');
 productos_carrito.innerHTML = productos_carritoLS.map( pc => 
 `<div class="product-card">

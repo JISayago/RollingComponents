@@ -4,12 +4,10 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     var motivo = document.getElementById('motivo').value;
     var mensaje = document.getElementById('mensaje').value;
 
-    // Obtener los elementos de error
     var emailErrorElement = document.getElementById('emailError');
     var motivoErrorElement = document.getElementById('motivoError');
     var mensajeErrorElement = document.getElementById('mensajeError');
 
-    // Reiniciar los estilos de error
     document.getElementById('email').classList.remove('is-invalid');
     emailErrorElement.classList.remove('text-danger');
     document.getElementById('motivo').classList.remove('is-invalid');
@@ -17,7 +15,6 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     document.getElementById('mensaje').classList.remove('is-invalid');
     mensajeErrorElement.classList.remove('text-danger');
 
-    // Validar el campo de correo electrónico
     var emailError = "";
     if (email === "") {
         emailError = "El campo de correo electrónico no puede estar vacío.";
@@ -29,7 +26,6 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     }
     emailErrorElement.innerText = emailError;
 
-    // Validar el campo de motivo
     var motivoError = "";
     if (motivo === "") {
         motivoError = "El campo de motivo no puede estar vacío.";
@@ -38,7 +34,6 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     }
     motivoErrorElement.innerText = motivoError;
 
-    // Validar el campo de mensaje
     var mensajeError = "";
     if (mensaje === "") {
         mensajeError = "El campo de mensaje no puede estar vacío.";
@@ -47,7 +42,6 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     }
     mensajeErrorElement.innerText = mensajeError;
 
-    // Aplicar estilos de error si hay errores
     if (emailError) {
         document.getElementById('email').classList.add('is-invalid');
         emailErrorElement.classList.add('text-danger');
@@ -61,7 +55,6 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         mensajeErrorElement.classList.add('text-danger');
     }
 
-    // Prevenir el envío del formulario si hay errores
     if (emailError || motivoError || mensajeError) {
         event.preventDefault();
     }
