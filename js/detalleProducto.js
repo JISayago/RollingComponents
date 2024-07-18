@@ -9,6 +9,7 @@ const contenedor_detalle_producto = document.getElementById('contenedor-detalle-
 
 
 const agregarProductoAFavoritos = () => {
+    console.log("click fav")
     const userLogeado = JSON.parse(sessionStorage.getItem('usuarioLogeado'));
     if (userLogeado === "guest" || !userLogeado) {
         alert('Debe ingresar con su usuario para utilizar este servicio.')

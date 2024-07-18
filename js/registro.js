@@ -78,7 +78,7 @@ const registroEnSistema = () => {
                 username: usuario,
                 email: email,
                 password: contrasenia,
-                tipoUsuario: 2,
+                tipoUsuario: 1,
                 esteBloqueado: false
             };
             usuarios.push(nuevoUsuario);

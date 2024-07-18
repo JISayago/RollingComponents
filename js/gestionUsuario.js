@@ -14,7 +14,7 @@ const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 /*let nuevoUsuario = {
 nombre: "Bloqueado",
 apellido: "bloqueado",
-username: "bloq",
+username: "bloqueado",
 email: "bloq@gmail.com",
 password: "123456789",
 tipoUsuario: 1,
@@ -23,6 +23,7 @@ esteBloqueado: true
 usuarios.push(nuevoUsuario);
 localStorage.setItem('usuarios', JSON.stringify(usuarios));
 */
+
 const adminNoAdmin = (username) => {
     const usuarioLS = usuarios.find(u => u.username === username);
     
@@ -39,7 +40,6 @@ const bloquearDesbloquear = (username) => {
     
     if (usuarioLS) {
         usuarioLS.estaBloqueado = !usuarioLS.estaBloqueado; 
-        console.log(usuarioLS)
         const index = usuarios.findIndex(u => u.username === username);
         usuarios[index] = usuarioLS;
         localStorage.setItem('usuarios', JSON.stringify(usuarios));

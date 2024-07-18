@@ -17,58 +17,8 @@
 </head>
 <body>
   <!-- Comienzo sección Navbar-->
-  <div class=" mb-1">
-    <!-- First Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-      <div class="container-fluid p-2">
-        <a class="navbar-brand p-3" href="../index.html"><img src="../assets/logobSinFondo.png" alt="Imagen del Logo"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="./productos.html">Productos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./productos.html">Favoritos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./contacto.html">Contacto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link"  href="./sobreNosotros.html">Sobre Nosotros</a>
-            </li>
-          </ul>
-        </div>
-        <div class="d-flex align-items-center">
-          <a class="nav-link me-3" href="./login.html">Login</a>
-          <a class="nav-link me-3" href="./registro.html">Registro</a>
-          <div class="">
-            <a class="nav-link" href="#"><img  src="../assets/siluetaguestsinfondo.png" alt="User Logo" style="width: 40px; height: 40px;"></a>
-            <label class="text-white" for="">User</label>
-          </div>
-        </div>
-      </div>
-    </nav>
-    
-    <!-- Second Navbar -->
-    <nav class="navbar navbar-dark bg-black pb-4 px-3">
-      <div class="container-fluid justify-content-between">
-        <div class="navbar-nav"></div>
-        <form class="d-flex mx-auto" role="search" style="width: 100%; max-width: 600px;">
-          <input class="form-control me-2" type="search" placeholder="Ej: Ryzen 5 1400" aria-label="Search">
-          <button class="btn btn-buscar" type="submit">Buscar</button>
-        </form>
-        <div class="cart-container position-relative">
-          <a class="nav-link" href="#"><img src="../assets/carritosinfondo.png" alt="Cart Icon" style="width: 35px; height: 35px;"></a>
-          <div class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            0
-          </div>
-        </div>
-      </div>
-    </nav>
-  </div>
+  <div class=" mb-1" id="contenedor-nav">
+  </div>  
   <!-- Fin sección Navbar-->
 
   <div class="container my-5">
@@ -164,6 +114,7 @@
     <script src="https://kit.fontawesome.com/416cfb6a1a.js" crossorigin="anonymous"></script>
     <script src="../js/index.js"></script>
     <script src="../js/detalleProducto.js"></script>
+    <script src="../js/navbar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
   </html>
