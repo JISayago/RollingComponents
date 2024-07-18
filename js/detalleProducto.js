@@ -8,6 +8,31 @@ const producto = productos_json.find(p => p.id === parseInt(parametro));
 const contenedor_detalle_producto = document.getElementById('contenedor-detalle-producto');
 
 
+const agregarAlCarrito = (id) => {
+    let carrito = JSON.parse(localStorage.getItem(`carrito-${usuarioLogeado.username}`)) || [];
+    let producto = productos_json.find(p => p.id === parseInt(id));
+    
+    if (producto) {
+        let existingItem = carrito.find(item => item.id === producto.id);
+        
+        if (existingItem) {
+            // Si el producto ya está en el carrito, aumentar la cantidad
+            existingItem.cantidad += 1;
+        } else {
+            // Si el producto no está en el carrito, agregarlo con cantidad 1
+            producto.cantidad = 1;
+            carrito.push(producto);
+        }
+        if (usuarioLogeado.tipoUsuario === 1) {
+            
+            localStorage.setItem(`carrito-${usuarioLogeado.username}`, JSON.stringify(carrito));
+        } else {
+            alert("Con este tipo de usuario no puede agregar al carrito!");
+            window.location.href = "./login.html"
+        }
+    }
+}
+
 const agregarProductoAFavoritos = () => {
     console.log("click fav")
     const userLogeado = JSON.parse(sessionStorage.getItem('usuarioLogeado'));
@@ -53,7 +78,7 @@ contenedor_detalle_producto.innerHTML =
                 <p><strong>Disponibilidad:</strong> ${producto.cantidad}</p>
                 <p><strong>Marca:</strong> ${producto.marca}</p>
                 <div class="mt-4">
-                    <button class="btn btn-primary me-3">Agregar al Carrito</button>
+                   <button class="btn btn-Comprar" id="AgregarAlCarrito" onclick="agregarAlCarrito('${producto.id}')">Comprar</button>
                     <button class="btn btn-outline-primary" id="btn-AgregarFavorito">Agregar a Favoritos</button>
                 </div>
             </div>
