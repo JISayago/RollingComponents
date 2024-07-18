@@ -1,5 +1,5 @@
+let usuarioLogeado = JSON.parse(sessionStorage.getItem('usuarioLogeado')) || [];
 let productos_json = JSON.parse(localStorage.getItem('productos')) || [];
-const usuarioLogeado = JSON.parse(sessionStorage.getItem('usuarioLogeado')) || []
 let productos = [];
 
 
@@ -22,12 +22,12 @@ switch (parametro) {
     productos = productos_json.filter(p => p.enOferta);
     break;
     case "Favoritos":
-    let userLogeado = JSON.parse(sessionStorage.getItem('usuarioLogeado')) || "guest";
-    if (userLogeado === "guest") {
+    usuarioLogeado = JSON.parse(sessionStorage.getItem('usuarioLogeado')) || "guest";
+    if (usuarioLogeado === "guest") {
         alert('El producto ya se encuentra en favoritos')
         window.location.href = "../pages/productos.html?=Favoritos"
     } else {
-        let productosFavoritosLS = JSON.parse(localStorage.getItem(`productosFavoritos:${userLogeado.username}`)) || [];
+        let productosFavoritosLS = JSON.parse(localStorage.getItem(`productosFavoritos:${usuarioLogeado.username}`)) || [];
         productos = productos_json.filter(producto => 
             productosFavoritosLS.some(favorito => favorito.id === producto.id)
         );

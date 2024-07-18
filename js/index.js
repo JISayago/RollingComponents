@@ -3,6 +3,9 @@ if ((!sessionStorage.getItem('vioHeroPage')) || (sessionStorage.getItem('vioHero
     window.location.href = "./pages/heroPage.html"
 }
 
+const usuarioLogeado = JSON.parse(sessionStorage.getItem('usuarioLogeado')) || [];
+
+
 const categorias_array = [
     { id: 1, nombre: "Accesorios", enPrincipal: true },
     { id: 2, nombre: "Componentes", enPrincipal: true },
@@ -217,25 +220,50 @@ if (!localStorage.getItem('productos')) {
 }
 else {
     productos_json = JSON.parse(localStorage.getItem('productos'));
-        productos = productos_json;
+    productos = productos_json;
+}
+
+const agregarAlCarritoIndex = (id) => {
+    let carrito = JSON.parse(localStorage.getItem(`carrito-${usuarioLogeado.username}`)) || [];
+    let producto = productos_json.find(p => p.id === parseInt(id));
+    
+    if (producto) {
+        let existingItem = carrito.find(item => item.id === producto.id);
+        
+        if (existingItem) {
+            // Si el producto ya está en el carrito, aumentar la cantidad
+            existingItem.cantidad += 1;
+        } else {
+            // Si el producto no está en el carrito, agregarlo con cantidad 1
+            producto.cantidad = 1;
+            carrito.push(producto);
+        }
+        if (usuarioLogeado.tipoUsuario === 1) {
+            
+            localStorage.setItem(`carrito-${usuarioLogeado.username}`, JSON.stringify(carrito));
+        } else {
+            alert("Con este tipo de usuario no puede agregar al carrito!");
+            window.location.href = "./pages/login.html"
+        }
+    }
 }
 
 
 const contendor_categorias = document.getElementById('contenedor-categorias-index');
 
 contendor_categorias.innerHTML = categorias
-        .filter(c => c.enPrincipal)
-        .map(c =>
+.filter(c => c.enPrincipal)
+.map(c =>
             `
             <div class="col-md-4 mb-2">
                 <a href="./pages/productos.html?=${c.nombre}" class="btn btn-outline-secondary w-100 categoria_link">${c.nombre}</a>
               </div>
     `)
     .join("");
-        
     
-const contenedor_productos_destacados = document.getElementById('productos-destacados-index');
-const productos_destacados = productos_array.filter(p => p.destacado).slice(0, 4);
+    
+    const contenedor_productos_destacados = document.getElementById('productos-destacados-index');
+    const productos_destacados = productos_array.filter(p => p.destacado).slice(0, 4);
     contenedor_productos_destacados.innerHTML = productos_destacados.map(p =>
         `
            <div class="card m-3 card-local contenedor-producto-local" style="width: 18rem;">
@@ -245,17 +273,17 @@ const productos_destacados = productos_array.filter(p => p.destacado).slice(0, 4
                 <p class="card-text text-truncate-local">${p.detalle}</p>
                 <h6 class="card-title w-100 text-center fw-bold fs-5 text p-2 mb-3 border-bottom-local align-h6 precio-producto">$ ${p.precio}</h6>
                 <div class="d-flex w-100 justify-content-evenly">
-                  <a class="btn btn-Comprar" id="AgregarAlCarrito">Comprar</a>
-                  <a href="" class="btn btn-Detalle">Detalles</a>
-                </div>
+              <button class="btn btn-Comprar" id="AgregarAlCarrito" onclick="agregarAlCarritoIndex('${p.id}')">Comprar</button>
+              <a href="./pages/detalleProducto.html?=${p.id}" class="btn btn-Detalle">Detalles</a>
+            </div>
               </div>
             </div>
         `
-).join("");
+    ).join("");
     
-const contenedor_productos_oferta = document.getElementById('productos-oferta-index');
-const productos_oferta = productos_array.filter(p => p.enOferta).slice(0, 4);
-contenedor_productos_oferta.innerHTML = productos_oferta.map(p =>
+    const contenedor_productos_oferta = document.getElementById('productos-oferta-index');
+    const productos_oferta = productos_array.filter(p => p.enOferta).slice(0, 4);
+    contenedor_productos_oferta.innerHTML = productos_oferta.map(p =>
       `
            <div class="card m-3 card-local contenedor-producto-local" style="width: 18rem;">
               <img src='${p.imagenPrincipal}' class="card-img-top img-card-producto" alt="imagenProducto">
@@ -267,10 +295,10 @@ contenedor_productos_oferta.innerHTML = productos_oferta.map(p =>
                 <h6 class="card-title w-100 text-center fw-bold fs-5 text p-2 mb-3 border-bottom-local align-h6 precio-producto text-success">$ ${p.precioEnOferta}</h6>` : 
                 `<h6 class="card-title w-100 text-center fw-bold fs-5 text p-2 mb-3 border-bottom-local align-h6 precio-producto">$ ${p.precio}</h6>`
                 }
-                <div class="d-flex w-100 justify-content-evenly">
-                  <a class="btn btn-Comprar" id="AgregarAlCarrito">Comprar</a>
-                  <a href="../pages/detalleProducto.html?=${p.id}" class="btn btn-Detalle">Detalles</a>
-                </div>
+                  <div class="d-flex w-100 justify-content-evenly">
+              <button class="btn btn-Comprar" id="AgregarAlCarrito" onclick="agregarAlCarritoIndex('${p.id}')">Comprar</button>
+              <a href="./pages/detalleProducto.html?=${p.id}" class="btn btn-Detalle">Detalles</a>
+            </div>
               </div>
             </div>
         `
