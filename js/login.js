@@ -15,7 +15,6 @@ if (!usuarios.length) {
     usuarios.push(nuevoUsuario);
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
 }
-let intentosFallidos = 0;
 
 const ingresoAlSistema = () => {
     const usuarioInputElement = document.getElementById('usuarioInput');
@@ -56,10 +55,10 @@ const ingresoAlSistema = () => {
         if (usuarioEncontrado) {
             if (usuarioEncontrado.password === inputContrasenia) {
                 alert('Ingreso exitoso!');
-                // Redireccionar o cualquier otra acción que desees
                     sessionStorage.removeItem('usuarioLogeado') 
-                    sessionStorage.setItem('usuarioLogeado', JSON.stringify(usuarioEncontrado)) 
-                    window.location.href = '../index.html'; // Ejemplo de redireccionamiento
+                sessionStorage.setItem('usuarioLogeado', JSON.stringify(usuarioEncontrado)) 
+                    sessionStorage.setItem('vioHeroPage', 'true');
+                    window.location.href = '../index.html'; 
             } else {
                 intentosFallidos++;
                 contraseniaErrorElement.innerText = "Contraseña incorrecta.";
@@ -67,7 +66,6 @@ const ingresoAlSistema = () => {
                 contraseniaErrorElement.classList.add('text-danger');
                 if (intentosFallidos >= 3) {
                     alert('Usuario bloqueado. Demasiados intentos fallidos.');
-                    // Lógica para bloquear al usuario
                 }
             }
         } else {
@@ -100,17 +98,14 @@ const validacionUsuario = (usuario) => {
 }
 
 const validacionContrasenia = (contrasenia) => {
-    // Verificar que no esté vacío
     if (contrasenia.trim() === "") {
         return "La contraseña no puede estar vacía.";
     }
 
-    // Verificar longitud mínima de 5 y máxima de 20 caracteres
     if (contrasenia.length < 5 || contrasenia.length > 20) {
         return "La contraseña debe tener entre 5 y 20 caracteres.";
     }
 
-    // Verificar que solo contenga letras y números
     const regex = /^[a-zA-Z0-9]+$/;
     if (!regex.test(contrasenia)) {
         return "La contraseña solo puede contener letras y números.";

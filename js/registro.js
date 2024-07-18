@@ -1,4 +1,3 @@
-// Variables globales
 let nombre = "";
 let apellido = "";
 let usuario = "";
@@ -18,55 +17,46 @@ const registroEnSistema = () => {
     
     let isValid = true;
     
-    // Reset all error messages and classes
     resetErrors();
     
-    // Validaciones para nombre
     if (nombre === "") {
         setError('firstName', 'El nombre no puede estar vacío.');
         isValid = false;
     }
     
-    // Validaciones para apellido
     if (apellido === "") {
         setError('lastName', 'El apellido no puede estar vacío.');
         isValid = false;
     }
     
-    // Validaciones para usuario
     const usuarioError = validarUsuario(usuario);
     if (usuarioError !== "") {
         setError('username', usuarioError);
         isValid = false;
     }
     
-    // Validaciones para email
     const emailError = validarEmail(email);
     if (emailError !== "") {
         setError('email', emailError);
         isValid = false;
     }
     
-    // Validaciones para contraseña
     const contraseniaError = validarContrasenia(contrasenia);
     if (contraseniaError !== "") {
         setError('password', contraseniaError);
         isValid = false;
     }
     
-    // Validaciones para confirmar contraseña
     if (contrasenia !== confirmarContrasenia) {
         setError('confirmPassword', 'Las contraseñas no coinciden.');
         isValid = false;
     }
     
-    // Validación de términos y condiciones
     if (!termsAccepted) {
         setError('terminos', 'Debes aceptar los términos y condiciones.');
         isValid = false;
     }
     
-    // Si todas las validaciones pasan
     if (isValid) {
         let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
         if (usuarios.find(user => user.username === usuario)) {
@@ -84,7 +74,7 @@ const registroEnSistema = () => {
             usuarios.push(nuevoUsuario);
             localStorage.setItem('usuarios', JSON.stringify(usuarios));
             alert('Registro exitoso!');
-            window.location.href = 'login.html';
+            window.location.href = './login.html';
         }
     }
 }
