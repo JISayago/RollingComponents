@@ -16,7 +16,6 @@ switch (parametro) {
     break;
     case "Destacados":
     productos = productos_json.filter(p => p.destacado);
-    console.log('if destacados', productos);
     break;
     case "Oferta":
     productos = productos_json.filter(p => p.enOferta);
@@ -44,7 +43,6 @@ switch (parametro) {
 }
 
 const contenedor_productos = document.getElementById('contenedor-productos');
-console.log('desp de switch', productos);
 
 const titulo = document.getElementById('titulo-productos');
 titulo.innerHTML = `Productos filtrado por: ${parametro ? parametro : 'Todos'}`;
@@ -54,13 +52,11 @@ const agregarAlCarrito = (id) => {
     let producto = productos_json.find(p => p.id === parseInt(id));
     
     if (producto) {
-        let existingItem = carrito.find(item => item.id === producto.id);
+        let existeEnCarrito = carrito.find(item => item.id === producto.id);
         
-        if (existingItem) {
-            // Si el producto ya está en el carrito, aumentar la cantidad
-            existingItem.cantidad += 1;
+        if (existeEnCarrito) {
+            existeEnCarrito.cantidad += 1;
         } else {
-            // Si el producto no está en el carrito, agregarlo con cantidad 1
             producto.cantidad = 1;
             carrito.push(producto);
         }
@@ -69,7 +65,7 @@ const agregarAlCarrito = (id) => {
             localStorage.setItem(`carrito-${usuarioLogeado.username}`, JSON.stringify(carrito));
         } else {
             alert("Con este tipo de usuario no puede agregar al carrito!");
-            window.location.href = "./login.html"
+            window.location.href = "../login.html"
         }
     }
 }
