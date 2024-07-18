@@ -1,6 +1,6 @@
-const userLogeado = JSON.parse(sessionStorage.getItem('usuarioLogeado')) || false;
+let user = JSON.parse(sessionStorage.getItem('usuarioLogeado')) || false;
 const pagina = window.location.href;
-const carrito = JSON.parse(localStorage.getItem(`carrito-${userLogeado.username}`));
+const carrito = JSON.parse(localStorage.getItem(`carrito-${user.username}`));
 const contenedor_nav = document.getElementById('contenedor-nav');
 const cerrarSesion = (username) => {
     if (username) {
@@ -18,7 +18,7 @@ if (pagina.includes('index.html')) {
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-        ${userLogeado.tipoUsuario === 0 ? 
+        ${user.tipoUsuario === 0 ? 
       `<ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="./pages/productos.html">Productos</a>
@@ -42,7 +42,7 @@ if (pagina.includes('index.html')) {
           </ul>`}
       </div>
       <div class="d-flex align-items-center">
-      ${userLogeado ? `<button class="nav-link me-3" onclick="cerrarSesion('${userLogeado.username}')">Cerrar Sesión</button>` :
+      ${user ? `<button class="nav-link me-3" onclick="cerrarSesion('${user.username}')">Cerrar Sesión</button>` :
       `<a class="nav-link me-3" href="./pages/login.html">Login</a>
         <a class="nav-link me-3" href="./pages/registro.html">Registro</a>`}
         
@@ -68,6 +68,7 @@ if (pagina.includes('index.html')) {
   </nav>
   `;
 } else {
+  console.log(user)
   contenedor_nav.innerHTML = `
   <nav class="navbar navbar-expand-lg navbar-dark bg-black">
     <div class="container-fluid p-2">
@@ -76,7 +77,7 @@ if (pagina.includes('index.html')) {
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-        ${userLogeado.tipoUsuario === 0 ? 
+        ${user.tipoUsuario === 0 ? 
       `<ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="./productos.html">Productos</a>
@@ -100,7 +101,7 @@ if (pagina.includes('index.html')) {
           </ul>`}
       </div>
       <div class="d-flex align-items-center">
-      ${userLogeado ? `<button class="nav-link me-3" onclick="cerrarSesion('${userLogeado.username}')">Cerrar Sesión</button>` :
+      ${user ? `<button class="nav-link me-3" onclick="cerrarSesion('${user.username}')">Cerrar Sesión</button>` :
       `<a class="nav-link me-3" href="./login.html">Login</a>
         <a class="nav-link me-3" href="./registro.html">Registro</a>`}
         

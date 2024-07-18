@@ -60,7 +60,6 @@ const agregarProductoAFavoritos = () => {
     }
     localStorage.setItem(`productosFavoritos:${userLogeado.username}`, JSON.stringify(favoritosLS));
 
-
 }
 
 contenedor_detalle_producto.innerHTML = 
