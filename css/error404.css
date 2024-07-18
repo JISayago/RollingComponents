@@ -1,0 +1,7 @@
+.cuerpo-404{
+  width: 100%;
+  height: 100vh;
+  background-image: url("../assets/Error404.png");
+  background-size: cover;
+  background-position: center;
+}
