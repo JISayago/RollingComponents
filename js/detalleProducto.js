@@ -1,5 +1,5 @@
 const productos = JSON.parse(localStorage.getItem('productos'))|| [];
-
+let isadmin = JSON.parse(sessionStorage.getItem('usuarioLogeado'));
 const url = new URLSearchParams(window.location.search);
 const parametro = url.get('');
 
@@ -8,6 +8,11 @@ const producto = productos_json.find(p => p.id === parseInt(parametro));
 const contenedor_detalle_producto = document.getElementById('contenedor-detalle-producto');
 
 
+const editarProducto = (id) => {
+    if (id) {
+       window.location.href = `../pages/productoABM.html?=${id}`
+   }
+}
 const agregarAlCarrito = (id) => {
     let carrito = JSON.parse(localStorage.getItem(`carrito-${usuarioLogeado.username}`)) || [];
     let producto = productos_json.find(p => p.id === parseInt(id));
@@ -76,10 +81,15 @@ contenedor_detalle_producto.innerHTML =
                 <p><strong>Precio Oferta:</strong> <span class="text-success">$ ${producto.precioEnOferta ? producto.precioEnOferta : "sin oferta" }</span></p>
                 <p><strong>Disponibilidad:</strong> ${producto.cantidad}</p>
                 <p><strong>Marca:</strong> ${producto.marca}</p>
-                <div class="mt-4">
+                ${isadmin.tipoUsuario === 0 ?
+                 `  <button class="btn btn-editar" id="editarProducto" onclick="editarProducto('${producto.id}')">Editar</button>`
+                 :
+                  `<div class="mt-4">
                    <button class="btn btn-Comprar" id="AgregarAlCarrito" onclick="agregarAlCarrito('${producto.id}')">Comprar</button>
                     <button class="btn btn-outline-primary" id="btn-AgregarFavorito">Agregar a Favoritos</button>
-                </div>
+                </div>`
+                   }
+                
             </div>
 `
 const btnAgregarFavorito = document.getElementById('btn-AgregarFavorito');
