@@ -1,0 +1,38 @@
+body {
+    /*background: url('https://picsum.photos/1920/1080?random=1') no-repeat center center fixed;*/
+    background-color: var(--negro);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.register-container {
+    background: rgba(255, 255, 255, 0.8);
+    width: 40%;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: var(--negro);
+}
+.error-message {
+    color: red;
+    font-size: 0.875em;
+}
+
+#registroForm a{
+    color: var(--color-1);
+}
+#registroForm button{
+    background-color:var(--color-1);
+    color:var(--negro);
+    
+}
+#registroForm  a:hover{
+    color: var(--negro);
+}
+#registroForm  button:hover{
+    background-color:var(--negro);
+    color:var(--color-1);
+    
+}

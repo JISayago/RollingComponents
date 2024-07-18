@@ -1,0 +1,32 @@
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.table {
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.table-responsive {
+    margin-top: 20px;
+}
+.contenedor-listado-usuarios{
+    padding: 40px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    background-color: var(--negro);
+    color: var(--blanco);
+    overflow: auto;
+}
+
+.btn-admin-no{
+    background-color: var(--negro);
+    color: var(--color-1);
+}
+.btn-admin-si{
+    background-color: var(--blanco);
+    color: var(--color-1);
+    border:1px solid var(--color-1);
+}

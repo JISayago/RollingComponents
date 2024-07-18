@@ -1,0 +1,23 @@
+.opcion-admin{
+    background-color: var(--negro);
+    padding: 30px;
+    border-radius: 15px;
+    
+}
+
+.opcion-admin h5{
+    color: var(--color-1);
+}
+.opcion-admin p{
+    color: var(--blanco);
+}
+.opcion-admin a{
+    border:1px solid var(--color-1);
+    background-color: var(--negro);
+    color: var(--color-1);
+}
+.opcion-admin a:hover{
+    border:1px solid var(--color-1);
+    background-color: var(--color-1);
+    color: var(--blanco);
+}

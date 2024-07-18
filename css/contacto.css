@@ -1,0 +1,31 @@
+.container {
+max-width: 600px;
+margin: 0 auto;
+padding: 20px;
+}
+
+.text-center {
+text-align: center;
+}
+
+.btn-enviar {
+    background-color: var(--negro);
+border: none;
+border: 1px solid var(--color-1);
+color:var(--color-1);
+padding: 10px;
+font-size: 18px;
+}
+
+.btn-enviar:hover {
+background-color: #C2184B;
+}
+
+.contenedor-contacto{
+    padding: 45px;
+    border-radius: 25px;
+    background-color: var(--negro);
+}
+.contenedor-contacto{
+    color: var(--blanco);
+}

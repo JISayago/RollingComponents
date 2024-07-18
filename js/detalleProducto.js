@@ -76,7 +76,7 @@ contenedor_detalle_producto.innerHTML =
             <!-- Detalles del producto -->
             <div class="col-lg-6 producto-detalle">
                 <h2 class="mb-4">${producto.nombre}</h2>
-                <p class="lead mb-4">${producto.detalle}</p>
+                <p class="lead mb-4 detalle-producto">${producto.detalle}</p>
                 <p><strong>Precio:</strong> $ ${producto.precio}</p>
                 <p><strong>Precio Oferta:</strong> <span class="text-success">$ ${producto.precioEnOferta ? producto.precioEnOferta : "sin oferta" }</span></p>
                 <p><strong>Disponibilidad:</strong> ${producto.cantidad}</p>
@@ -86,7 +86,7 @@ contenedor_detalle_producto.innerHTML =
                  :
                   `<div class="mt-4">
                    <button class="btn btn-Comprar" id="AgregarAlCarrito" onclick="agregarAlCarrito('${producto.id}')">Comprar</button>
-                    <button class="btn btn-outline-primary" id="btn-AgregarFavorito">Agregar a Favoritos</button>
+                    <button class="btn btn-Favoritos" id="btn-AgregarFavorito">Agregar a Favoritos</button>
                 </div>`
                    }
                 

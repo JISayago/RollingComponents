@@ -55,12 +55,12 @@ tabla.innerHTML = usuarios.map(u =>
         <td>${u.estaBloqueado ? 'Si' : 'No'}</td>
         <td>
             ${u.tipoUsuario === 0 
-                ? `<button class="btn btn-warning btn-sm" onclick="adminNoAdmin('${u.username}')">Quitar Admin</button>` 
-                : `<button class="btn btn-warning btn-sm" onclick="adminNoAdmin('${u.username}')">Hacer Admin</button>`
+                ? `<button class="btn btn-admin-no btn-sm" onclick="adminNoAdmin('${u.username}')">Quitar Admin</button>` 
+                : `<button class="btn btn-admin-si btn-sm" onclick="adminNoAdmin('${u.username}')">Hacer Admin</button>`
             }
             ${u.estaBloqueado 
                 ? `<button class="btn btn-success btn-sm" onclick="bloquearDesbloquear('${u.username}')">Desbloquear</button>` 
-                : `<button class="btn btn-success btn-sm" onclick="bloquearDesbloquear('${u.username}')">Bloquear</button>`
+                : `<button class="btn btn-danger btn-sm" onclick="bloquearDesbloquear('${u.username}')">Bloquear</button>`
             }
         </td>
     </tr>`

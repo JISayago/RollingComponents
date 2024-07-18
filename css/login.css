@@ -1,0 +1,33 @@
+body {
+    /*background: url('https://picsum.photos/1920/1080?random=1') no-repeat center center fixed;*/
+    background-color: var(--negro);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-container {
+    background: rgba(255, 255, 255, 0.8);
+    width: 40%;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: var(--negro);
+}
+.login-container a{
+    color: var(--color-1);
+}
+.login-container button{
+    background-color:var(--color-1);
+    color:var(--negro);
+
+}
+.login-container a:hover{
+    color: var(--negro);
+}
+.login-container button:hover{
+    background-color:var(--negro);
+    color:var(--color-1);
+
+}
