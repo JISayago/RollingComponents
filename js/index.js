@@ -40,7 +40,8 @@ const productos_array = [
         imagenPrincipal: "https://picsum.photos/800/400?random=1",
         destacado: true,
         enOferta: false,
-        precioEnOferta: null
+        precioEnOferta: null,
+        eliminado: false
     },
     {
         id: 2,
@@ -53,7 +54,8 @@ const productos_array = [
         imagenPrincipal: "https://picsum.photos/800/400?random=2",
         destacado: false,
         enOferta: true,
-        precioEnOferta: 6799.99
+        precioEnOferta: 6799.99,
+        eliminado: false
     },
     {
         id: 3,
@@ -66,7 +68,8 @@ const productos_array = [
         imagenPrincipal: "https://picsum.photos/800/400?random=3",
         destacado: true,
         enOferta: false,
-        precioEnOferta: null
+        precioEnOferta: null,
+        eliminado: false
     },
     {
         id: 4,
@@ -79,7 +82,8 @@ const productos_array = [
         imagenPrincipal: "https://picsum.photos/800/400?random=4",
         destacado: false,
         enOferta: true,
-        precioEnOferta: 20999.99
+        precioEnOferta: 20999.99,
+        eliminado: false
     },
     {
         id: 5,
@@ -92,7 +96,8 @@ const productos_array = [
         imagenPrincipal: "https://picsum.photos/800/400?random=5",
         destacado: true,
         enOferta: false,
-        precioEnOferta: null
+        precioEnOferta: null,
+        eliminado: false
     },
     {
         id: 6,
@@ -105,7 +110,8 @@ const productos_array = [
         imagenPrincipal: "https://picsum.photos/800/400?random=6",
         destacado: false,
         enOferta: true,
-        precioEnOferta: 19999.99
+        precioEnOferta: 19999.99,
+        eliminado: false
     },
     {
         id: 7,
@@ -118,7 +124,8 @@ const productos_array = [
         imagenPrincipal: "https://picsum.photos/800/400?random=7",
         destacado: true,
         enOferta: false,
-        precioEnOferta: null
+        precioEnOferta: null,
+        eliminado: false
     },
     {
         id: 8,
@@ -131,7 +138,8 @@ const productos_array = [
         imagenPrincipal: "https://picsum.photos/800/400?random=8",
         destacado: false,
         enOferta: true,
-        precioEnOferta: 4299.99
+        precioEnOferta: 4299.99,
+        eliminado: false
     },
     {
         id: 9,
@@ -144,7 +152,8 @@ const productos_array = [
         imagenPrincipal: "https://picsum.photos/800/400?random=9",
         destacado: true,
         enOferta: false,
-        precioEnOferta: null
+        precioEnOferta: null,
+        eliminado: false
     },
     {
         id: 10,
@@ -157,7 +166,8 @@ const productos_array = [
         imagenPrincipal: "https://picsum.photos/800/400?random=10",
         destacado: false,
         enOferta: true,
-        precioEnOferta: 15999.99
+        precioEnOferta: 15999.99,
+        eliminado: false
     },
     {
         id: 11,
@@ -170,7 +180,8 @@ const productos_array = [
         imagenPrincipal: "https://picsum.photos/800/400?random=11",
         destacado: true,
         enOferta: false,
-        precioEnOferta: null
+        precioEnOferta: null,
+        eliminado: false
     },
     {
         id: 12,
@@ -183,7 +194,8 @@ const productos_array = [
         imagenPrincipal: "https://picsum.photos/800/400?random=12",
         destacado: false,
         enOferta: true,
-        precioEnOferta: 17999.99
+        precioEnOferta: 17999.99,
+        eliminado: false
     },
     {
         id: 13,
@@ -196,7 +208,8 @@ const productos_array = [
         imagenPrincipal: "https://picsum.photos/800/400?random=13",
         destacado: true,
         enOferta: false,
-        precioEnOferta: null
+        precioEnOferta: null,
+        eliminado: false
     },
     {
         id: 14,
@@ -209,7 +222,134 @@ const productos_array = [
         imagenPrincipal: "https://picsum.photos/800/400?random=14",
         destacado: false,
         enOferta: true,
-        precioEnOferta: 79999.99
+        precioEnOferta: 79999.99,
+        eliminado: false
+    },
+    {
+        id: 15,
+        nombre: "Disco Duro Externo Seagate Expansion 2TB",
+        detalle: "Disco duro externo de 2TB con conexión USB 3.0",
+        marca: "Seagate",
+        categorias: ["Almacenamiento"],
+        precio: 5999.99,
+        cantidad: 20,
+        imagenPrincipal: "https://picsum.photos/800/400?random=15",
+        destacado: false,
+        enOferta: true,
+        precioEnOferta: 5499.99,
+        eliminado: false
+    },
+    {
+        id: 16,
+        nombre: "Router TP-Link Archer AX6000",
+        detalle: "Router Wi-Fi 6 de doble banda con velocidad combinada de hasta 6000Mbps",
+        marca: "TP-Link",
+        categorias: ["Redes"],
+        precio: 12999.99,
+        cantidad: 6,
+        imagenPrincipal: "https://picsum.photos/800/400?random=16",
+        destacado: true,
+        enOferta: false,
+        precioEnOferta: null,
+        eliminado: false
+    },
+    {
+        id: 17,
+        nombre: "Sistema de Refrigeración líquida NZXT Kraken X73 RGB",
+        detalle: "Sistema de refrigeración líquida para CPU con iluminación RGB",
+        marca: "NZXT",
+        categorias: ["Refrigeración"],
+        precio: 8999.99,
+        cantidad: 10,
+        imagenPrincipal: "https://picsum.photos/800/400?random=17",
+        destacado: false,
+        enOferta: true,
+        precioEnOferta: 7999.99,
+        eliminado: false
+    },
+    {
+        id: 18,
+        nombre: "Software Adobe Creative Cloud",
+        detalle: "Suscripción anual a Adobe Creative Cloud para diseño gráfico y edición de video",
+        marca: "Adobe",
+        categorias: ["Software"],
+        precio: 23999.99,
+        cantidad: 15,
+        imagenPrincipal: "https://picsum.photos/800/400?random=18",
+        destacado: true,
+        enOferta: false,
+        precioEnOferta: null,
+        eliminado: false
+    },
+    {
+        id: 19,
+        nombre: "Auriculares SteelSeries Arctis 7",
+        detalle: "Auriculares inalámbricos para gaming con sonido envolvente y micrófono retráctil",
+        marca: "SteelSeries",
+        categorias: ["Audio"],
+        precio: 8999.99,
+        cantidad: 8,
+        imagenPrincipal: "https://picsum.photos/800/400?random=19",
+        destacado: false,
+        enOferta: true,
+        precioEnOferta: 7999.99,
+        eliminado: false
+    },
+    {
+        id: 33,
+        nombre: "Microsoft Office 365 Personal",
+        detalle: "Suscripción anual para 1 usuario con acceso a aplicaciones de Office",
+        marca: "Microsoft",
+        categorias: ["Software"],
+        precio: 4999.99,
+        cantidad: 20,
+        imagenPrincipal: "https://picsum.photos/800/400?random=33",
+        destacado: true,
+        enOferta: false,
+        precioEnOferta: null,
+        eliminado: false
+    },
+    {
+        id: 34,
+        nombre: "Antivirus Norton 360 Deluxe",
+        detalle: "Protección avanzada para dispositivos y privacidad en línea",
+        marca: "Norton",
+        categorias: ["Software"],
+        precio: 2999.99,
+        cantidad: 15,
+        imagenPrincipal: "https://picsum.photos/800/400?random=34",
+        destacado: false,
+        enOferta: true,
+        precioEnOferta: 2499.99,
+        eliminado: false
+    },
+    {
+        id: 35,
+        nombre: "Auriculares Inalámbricos Sony WH-1000XM4",
+        detalle: "Cancelación activa de ruido y calidad de sonido excepcional",
+        marca: "Sony",
+        categorias: ["Audio"],
+        precio: 18999.99,
+        cantidad: 10,
+        imagenPrincipal: "https://picsum.photos/800/400?random=35",
+        destacado: true,
+        enOferta: false,
+        precioEnOferta: null,
+        eliminado: false
+    },
+    {
+        id: 36,
+        nombre: "Parlantes Bluetooth Bose SoundLink Revolve+",
+        detalle: "Sonido profundo y envolvente con conectividad Bluetooth",
+        marca: "Bose",
+        categorias: ["Audio"],
+        precio: 12999.99,
+        cantidad: 12,
+        imagenPrincipal: "https://picsum.photos/800/400?random=36",
+        destacado: false,
+        enOferta: true,
+        precioEnOferta: 10999.99,
+        eliminado: false
     }
 ];
 

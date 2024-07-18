@@ -33,6 +33,7 @@ if (url.size === 1 && productos.length) {
         contPDestacado.checked = producto.destacado;
         contPCategorias.value = producto.categorias.join(', ');
     }
+
 }
 
 // Función para generar un ID único basado en la fecha y hora actual
@@ -108,6 +109,28 @@ function cargarNuevo(e) {
     limpiarCampos();
 }
 
+function eliminarLogica() {
+    // Buscar el producto por su ID
+    let index = productos.findIndex(p => p.id === parseInt(id));
+    if (index !== -1) {
+        // Mostrar confirmación para eliminar el producto
+        if (confirm(`Estás por eliminar el producto con ID ${id}. ¿Deseas continuar?`)) {
+            // Cambiar el estado del producto a eliminado
+            productos[index].eliminado = true;
+
+            // Actualizar los productos en localStorage
+            localStorage.setItem('productos', JSON.stringify(productos));
+
+            // Opcional: Mostrar mensaje de éxito o realizar alguna acción adicional
+            console.log(`Producto con ID ${id} eliminado correctamente.`);
+        }
+    } else {
+        alert("Por favor selecciona un producto para eliminar");
+        window.location.href = "../pages/productos.html"
+    }
+}
 // Evento para escuchar el click en el botón de agregar/guardar producto
 const btnAgregar = document.getElementById('btnAgregar');
 btnAgregar.addEventListener('click', cargarNuevo);
+const btnEliminar = document.getElementById('btnEliminar');
+btnEliminar.addEventListener('click', eliminarLogica);
